@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "Carrois Gothic";
+  src: url("../fonts/CarroisGothic-Regular.ttf");
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(to right, #fefefa, #feba4f);
+  position: relative;
+}
+
+.photo {
+  position: absolute;
+  right: 5vw;
+  top: 25vh;
+}
+
+.photo img {
+  height: 550px;
+}
+
+.textbox {
+  margin-top: 33vh;
+  margin-left: 10vw;
+  color: #28231d;
+}
+
+.textbox h2 {
+  font-size: 80px;
+  font-family: "Carrois Gothic";
+  display: inline;
+}
+
+.textbox h3 {
+  font-size: 40px;
+  font-family: "Carrois Gothic";
+}
+
+.typing {
+  color: #f77f00;
+}
