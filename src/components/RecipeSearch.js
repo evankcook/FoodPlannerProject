@@ -3,12 +3,14 @@ import Card from "./ui/Card";
 import { useState } from "react";
 
 function RecipeSearch(props) {
+  const [query, setQuery] = useState("");
   const [includeIngredients, setIncludeIngredients] = useState("");
   const [excludeIngredients, setExcludeIngredients] = useState("");
   const [maxTime, setMaxTime] = useState("");
 
   const handleSubmit = () => {
     const info = {
+      query: query,
       includeIngredients: includeIngredients,
       excludeIngredients: excludeIngredients,
       maxTime: maxTime,
@@ -19,6 +21,12 @@ function RecipeSearch(props) {
   return (
     <Card className={classes.card}>
       <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="pasta..."
+          onChange={(e) => setQuery(e.target.value)}
+          value={query}
+        />
         <label>Include Ingredients</label>
         <input
           type="text"
