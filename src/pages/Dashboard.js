@@ -7,7 +7,7 @@ function Dashboard() {
   const key = process.env.REACT_APP_API_KEY;
   console.log(key);
 
-  const getMeal = () => {
+  const getMeal = (query, includeIngredients, excludeIngredients, maxTime) => {
     fetch(
       "https://api.spoonacular.com/recipes/complexSearch?apiKey=" +
         key +
