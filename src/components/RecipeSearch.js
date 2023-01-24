@@ -1,6 +1,7 @@
 import classes from "./RecipeSearch.module.css";
 import Card from "./ui/Card";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Button from "./ui/Button";
 
 function RecipeSearch(props) {
   const [query, setQuery] = useState("");
@@ -8,19 +9,19 @@ function RecipeSearch(props) {
   const [excludeIngredients, setExcludeIngredients] = useState("");
   const [maxTime, setMaxTime] = useState("");
 
-  const handleSubmit = () => {
-    const info = {
-      query: query,
-      includeIngredients: includeIngredients,
-      excludeIngredients: excludeIngredients,
-      maxTime: maxTime,
-    };
-    props.onSearchInfo(info);
-  };
+  // const handleSubmit = () => {
+  //   const info = {
+  //     query: query,
+  //     includeIngredients: includeIngredients,
+  //     excludeIngredients: excludeIngredients,
+  //     maxTime: maxTime,
+  //   };
+  //   props.onSearchInfo(info);
+  // };
 
   return (
     <Card className={classes.card}>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleRecipeQuery}>
         <input
           type="text"
           placeholder="pasta..."
@@ -48,6 +49,7 @@ function RecipeSearch(props) {
           onChange={(e) => setMaxTime(e.target.value)}
           value={maxTime}
         />
+        <Button type="submit">Search!</Button>
       </form>
     </Card>
   );
