@@ -10,9 +10,9 @@ function RecipeSearch(props) {
   const [excludeIngredients, setExcludeIngredients] = useState("");
   const [maxTime, setMaxTime] = useState("");
 
-  function submitRecipeQuery(e) {
+  async function submitRecipeQuery(e) {
     e.preventDefault();
-    const results = handleRecipeQuery(
+    const results = await handleRecipeQuery(
       query,
       includeIngredients,
       excludeIngredients,
