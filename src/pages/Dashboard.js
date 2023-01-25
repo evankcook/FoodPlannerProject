@@ -8,7 +8,6 @@ function Dashboard() {
   return (
     <div className={classes.search}>
       <RecipeSearch onSearchInfo={handleSearchInfo} />
-      <RecipeSearch onSearchInfo={handleSearchInfo} />
     </div>
   );
 }

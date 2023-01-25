@@ -2,7 +2,7 @@ import classes from "./RecipeSearch.module.css";
 import Card from "./ui/Card";
 import { useState } from "react";
 import Button from "./ui/Button";
-import { handleRecipeQuery } from "../apis/API";
+import { handleRecipeQuery } from "../utils/API";
 
 function RecipeSearch(props) {
   const [query, setQuery] = useState("");
@@ -18,7 +18,7 @@ function RecipeSearch(props) {
       excludeIngredients,
       maxTime
     );
-    // props.onReceiveRecipe(results);
+    props.onReceiveRecipe(results);
   }
 
   return (
