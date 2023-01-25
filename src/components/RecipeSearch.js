@@ -18,6 +18,10 @@ function RecipeSearch(props) {
       excludeIngredients,
       maxTime
     );
+    setQuery("");
+    setIncludeIngredients("");
+    setExcludeIngredients("");
+    setMaxTime("");
     props.onReceiveRecipe(results);
   }
 
