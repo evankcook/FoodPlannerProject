@@ -4,9 +4,6 @@
 }
 
 .container {
-  height: 100vh;
-  width: 100vw;
-  background-image: linear-gradient(to right, #fefefa, #feba4f);
   position: relative;
 }
 
@@ -21,9 +18,11 @@
 }
 
 .textbox {
-  margin-top: 33vh;
+  padding-top: 33vh;
   margin-left: 10vw;
   color: #28231d;
+  position: absolute;
+  z-index: 1;
 }
 
 .textbox h2 {
@@ -35,6 +34,7 @@
 .textbox h3 {
   font-size: 40px;
   font-family: "Carrois Gothic";
+  color: #474747;
 }
 
 .typing {
