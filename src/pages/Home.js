@@ -20,9 +20,6 @@ function Home() {
   ];
   return (
     <div className={classes.container}>
-      <div className={classes.photo}>
-        <img src="images/salmon.svg" alt="salmon dish" />
-      </div>
       <div className={classes.textbox}>
         <h2>Find your next favorite</h2>
         <br />
@@ -37,6 +34,9 @@ function Home() {
         <Button onClick={() => navigate("/dashboard")}>
           Start your search!
         </Button>
+      </div>
+      <div className={classes.photo}>
+        <img src="images/salmon.svg" alt="salmon dish" />
       </div>
     </div>
   );
