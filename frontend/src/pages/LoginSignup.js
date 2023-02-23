@@ -30,7 +30,7 @@ function LoginSignup() {
       console.log(username + password);
       await login(username, password);
       setIsLoading(true);
-      setTimeout(() => window.location.reload(false), 2000);
+      setTimeout(() => window.location.reload(false), 3000);
     } catch (err) {
       alert(err.message);
     }
@@ -42,7 +42,7 @@ function LoginSignup() {
       console.log(newUsername + newPassword);
       await signup(newUsername, newPassword);
       setIsLoading(true);
-      setTimeout(() => window.location.reload(false), 2000);
+      setTimeout(() => window.location.reload(false), 3000);
     } catch (err) {
       alert(err.message);
     }
