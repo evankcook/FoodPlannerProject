@@ -1,0 +1,6 @@
+.container {
+  height: max(100vh, 760px);
+  width: 100vw;
+  background-image: linear-gradient(to right, #fefefa, #feba4f);
+  position: relative;
+}

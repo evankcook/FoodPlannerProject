@@ -1,0 +1,23 @@
+.navbar {
+  width: 100vw;
+  background-color: #fefefa;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  filter: drop-shadow(0px 1px 1px #feba4f);
+}
+
+.navbar svg {
+  height: 60px;
+  padding-left: 5vw;
+}
+
+.navbar svg:hover path {
+  fill: #feba4f;
+}
+
+.navbar div {
+  position: fixed;
+}
