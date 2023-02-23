@@ -1,7 +1,31 @@
 import classes from "./Navbar.module.css";
 import { Link } from "react-router-dom";
+import Button from "./ui/Button";
+import { useEffect, useState } from "react";
+import { checkLogin, logout } from "../Utils";
 
 function Navbar() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
+
+  useEffect(() => {
+    checkLogin().then((result) => {
+      setIsLoggedIn(result);
+    });
+  }, []);
+
+  async function handleLogout(e) {
+    e.preventDefault();
+    try {
+      console.log("Begin logout from Client...");
+      await logout();
+      setIsLoggingOut(true);
+      setTimeout(() => window.location.reload(false), 1000);
+    } catch (err) {
+      alert(err.message);
+    }
+  }
+
   return (
     <nav className={classes.navbar}>
       <Link to="/">
@@ -20,6 +44,11 @@ function Navbar() {
           />
         </svg>
       </Link>
+      {isLoggedIn && (
+        <Button onClick={handleLogout}>
+          {isLoggingOut ? "Logging out now..." : "Logout"}
+        </Button>
+      )}
     </nav>
   );
 }
