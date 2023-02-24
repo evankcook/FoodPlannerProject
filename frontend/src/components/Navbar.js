@@ -4,7 +4,7 @@ import Button from "./ui/Button";
 import { useEffect, useState } from "react";
 import { checkLogin, logout } from "../utils/UserAuthUtils";
 
-function Navbar() {
+function Navbar(props) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
 

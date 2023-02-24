@@ -7,7 +7,7 @@ const pool = require("./database");
 const _ = require("lodash");
 const app = express();
 
-const THREE_MINUTES = 1000 * 60 * 30;
+const THREE_MINUTES = 1000 * 60 * 3;
 
 const {
   PORT = 8080,

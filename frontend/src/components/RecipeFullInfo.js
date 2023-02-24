@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import {
   addRecipeToGroup,
   createGroup,
-  createRecipe,
   getGroupIdByGroupName,
 } from "../utils/RouteUtils";
 import { getUserDetails } from "../utils/UserAuthUtils";
@@ -42,6 +41,8 @@ function RecipeFullInfo(props) {
     // add recipe to group
     const response = await addRecipeToGroup(props.id, groupIdLocal, userId);
     console.log(response);
+    setGroupName("");
+    alert("Added to group!");
   }
 
   return (

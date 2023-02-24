@@ -1,6 +1,6 @@
 .fullInfo {
   padding-top: 10px;
-  height: 530px;
+  height: 580px;
   width: 40vw;
   background-color: #fefefa;
 }
@@ -91,10 +91,6 @@ a {
 
 .buttons a:focus {
   outline: none;
-}
-
-.form {
-  height: 100%;
 }
 
 .form form {
