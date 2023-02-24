@@ -1,5 +1,5 @@
 import classes from "./LoginSignup.module.css";
-import { checkLogin, login, signup } from "../Utils.js";
+import { checkLogin, login, signup } from "../utils/UserAuthUtils.js";
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";

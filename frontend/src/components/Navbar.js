@@ -2,7 +2,7 @@ import classes from "./Navbar.module.css";
 import { Link } from "react-router-dom";
 import Button from "./ui/Button";
 import { useEffect, useState } from "react";
-import { checkLogin, logout } from "../Utils";
+import { checkLogin, logout } from "../utils/UserAuthUtils";
 
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -12,6 +12,11 @@ function Navbar() {
     checkLogin().then((result) => {
       setIsLoggedIn(result);
     });
+    setInterval(() => {
+      checkLogin().then((result) => {
+        setIsLoggedIn(result);
+      });
+    }, 5000);
   }, []);
 
   async function handleLogout(e) {
@@ -43,6 +48,12 @@ function Navbar() {
             fill="#F77F00"
           />
         </svg>
+      </Link>
+      <Link className={classes.links} to="/dashboard">
+        My Dashboard
+      </Link>
+      <Link className={classes.links} to="/groups">
+        My Groups
       </Link>
       {isLoggedIn && (
         <Button onClick={handleLogout}>

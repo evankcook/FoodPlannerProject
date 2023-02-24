@@ -36,6 +36,62 @@ content-type: application/json
 
 POST http://localhost:8080/logout HTTP/1.1
 
+###
 
+POST http://localhost:8080/user/group HTTP/1.1
+content-type: application/json
 
+{
+    "groupName": "Favorites",
+    "userId": "6c5a752f-6c95-4617-884b-082dae0c0660"
+}
 
+###
+
+POST http://localhost:8080/recipe HTTP/1.1
+content-type: application/json
+
+{
+    "recipeId": "511728",
+    "title": "Pasta Margherita",
+    "image": "https://spoonacular.com/recipeImages/511728-312x231.jpg"
+}
+
+###
+
+POST http://localhost:8080/recipeGroup HTTP/1.1
+content-type: application/json
+
+{
+    "recipeId": "511728",
+    "groupId": "d4a8f933-1b92-42ef-b24d-c893ae849753",
+    "userId": "6c5a752f-6c95-4617-884b-082dae0c0660"
+}
+
+###
+
+GET http://localhost:8080/user/8163a2e9-c389-4bcd-b1b2-6dd12f03e28d HTTP/1.1
+
+###
+
+GET http://localhost:8080/users/6c5a752f-6c95-4617-884b-082dae0c0660/groups/d4a8f933-1b92-42ef-b24d-c893ae849753 HTTP/1.1
+
+###
+
+GET http://localhost:8080/users/6c5a752f-6c95-4617-884b-082dae0c0660/groups/d4a8f933-1b92-42ef-b24d-c893ae849753/recipe/Pasta&Margherita HTTP/1.1
+
+###
+
+GET http://localhost:8080/users/6c5a752f-6c95-4617-884b-082dae0c0660/recipe/Pasta&Margherita HTTP/1.1
+
+###
+
+GET http://localhost:8080/users/6c5a752f-6c95-4617-884b-082dae0c0660/randomRecipe HTTP/1.1
+
+###
+
+GET http://localhost:8080/users/6c5a752f-6c95-4617-884b-082dae0c0660/group/Favorites HTTP/1.1
+
+###
+
+GET http://localhost:8080/users/6c5a752f-6c95-4617-884b-082dae0c0660/groups HTTP/1.1

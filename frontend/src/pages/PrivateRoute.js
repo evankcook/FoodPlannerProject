@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { checkLogin } from "../Utils";
+import { checkLogin } from "../utils/UserAuthUtils";
 
 function PrivateRoute({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(undefined);

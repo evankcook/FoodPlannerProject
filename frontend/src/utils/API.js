@@ -7,7 +7,7 @@ export async function handleRecipeQuery(
   console.log("Fetching recipe query...");
   const url =
     "https://api.spoonacular.com/recipes/complexSearch?apiKey=" +
-    process.env.REACT_APP_API_KEY +
+    "9c5d68566c9d4014a84292ab910039ba" +
     `&query=${query}${
       includeIngredients ? "&includeIngredients=" + includeIngredients : ""
     }${excludeIngredients ? "&excludeIngredients=" + excludeIngredients : ""}${
@@ -29,7 +29,7 @@ export async function handleInformationQuery(id) {
     "https://api.spoonacular.com/recipes/" +
     id +
     "/information?apiKey=" +
-    process.env.REACT_APP_API_KEY +
+    "9c5d68566c9d4014a84292ab910039ba" +
     "&includeNutrition=false";
 
   const data = await fetch(url)

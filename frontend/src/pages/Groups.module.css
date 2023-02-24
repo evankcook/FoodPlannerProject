@@ -1,0 +1,45 @@
+.container {
+  padding-top: 20vh;
+  height: 150vh;
+  background-image: linear-gradient(to right, #fefefa, #feba4f);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.groupNames {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  background-color: #fdac55;
+  width: 90%;
+  margin: 0 5%;
+  border-radius: 6px;
+}
+
+.groupNames p {
+  text-shadow: #f77f00 0 0 2px;
+  margin: 0;
+  color: #fefefa;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.searchContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.searchResults {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: space-between;
+  flex-wrap: wrap;
+  width: 40vw;
+  height: 60%;
+  margin-top: 20px;
+}

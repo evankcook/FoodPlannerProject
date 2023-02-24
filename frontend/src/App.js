@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import LoginSignup from "./pages/LoginSignup";
 import PrivateRoute from "./pages/PrivateRoute";
+import Groups from "./pages/Groups";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<LoginSignup />} />
           <Route
             path="/dashboard"
             element={
@@ -22,7 +24,14 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route path="/signup" element={<LoginSignup />} />
+          <Route
+            path="/groups"
+            element={
+              <PrivateRoute>
+                <Groups />
+              </PrivateRoute>
+            }
+          />
         </Routes>
       </Router>
     </div>

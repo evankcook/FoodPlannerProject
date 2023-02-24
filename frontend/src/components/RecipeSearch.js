@@ -3,6 +3,9 @@ import Card from "./ui/Card";
 import { useState } from "react";
 import Button from "./ui/Button";
 import { handleRecipeQuery } from "../utils/API";
+import { useEffect } from "react";
+import { getUserDetails } from "../utils/UserAuthUtils";
+import { getUsernameById } from "../utils/RouteUtils";
 
 function RecipeSearch(props) {
   const [query, setQuery] = useState("");
@@ -21,13 +24,33 @@ function RecipeSearch(props) {
     props.onReceiveRecipe(results);
   }
 
+  const [userId, setUserId] = useState("");
+  const [username, setUsername] = useState();
+
+  useEffect(() => {
+    getUserDetails().then((result) => {
+      if (result.isLoggedIn === true) {
+        console.log("Setting userID");
+        setUserId(result.userId);
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    getUsernameById(userId).then((result) => {
+      setUsername(result);
+    });
+  }, [userId]);
+
   return (
     <Card className={classes.card}>
       <div className={classes.form}>
         <form onSubmit={submitRecipeQuery}>
           <div>
             <label>
-              <h2>Recipe Search</h2>
+              <h2>
+                Recipe Search for {username !== undefined ? username : "..."}
+              </h2>
               <input
                 type="text"
                 placeholder="pasta..."

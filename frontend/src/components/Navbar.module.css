@@ -26,3 +26,19 @@
 .navbar div {
   position: fixed;
 }
+
+@font-face {
+  font-family: "Carrois Gothic";
+  src: url("../fonts/CarroisGothic-Regular.ttf");
+}
+
+.links {
+  text-decoration: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  font-family: "Carrois Gothic";
+  font-size: 20px;
+  color: #f77f00;
+}
